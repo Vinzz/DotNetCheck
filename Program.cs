@@ -10,6 +10,10 @@ namespace DotNetCheck
 {
     class Program
     {
+        /// <summary>
+        /// Checks for .NET versions
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             GetOldDotNetVersions();
