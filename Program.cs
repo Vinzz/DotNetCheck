@@ -16,6 +16,8 @@ namespace DotNetCheck
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            Console.WriteLine(".NET content for computer "  + System.Environment.MachineName);
+            Console.WriteLine();
             GetOldDotNetVersions();
             Get45PlusVersions();
             GetDotNetCoreVersions();
