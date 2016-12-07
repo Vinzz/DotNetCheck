@@ -25,12 +25,16 @@ namespace DotNetCheck
 
         private static void GetDotNetCoreVersions()
         {
-            DirectoryInfo dotnet = new DirectoryInfo(Environment.ExpandEnvironmentVariables("%ProgramW6432%") + @"\dotnet\sdk");
+            string dotnetsdkdir = Environment.ExpandEnvironmentVariables("%ProgramW6432%") + @"\dotnet\sdk";
+            if (Directory.Exists(dotnetsdkdir))
+            { 
+            DirectoryInfo dotnet = new DirectoryInfo(dotnetsdkdir);
 
             Console.WriteLine(".NET Core versions");
             foreach (DirectoryInfo di in dotnet.EnumerateDirectories())
             {
                 Console.WriteLine("  " + di.Name);
+            }
             }
         }
 
